@@ -13,27 +13,93 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/image_view" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Choose Photo"
             android:onClick="choosePhoto" />
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sepia"
-            android:onClick="applySepia" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sketch"
-            android:onClick="applySketch" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Toon"
-            android:onClick="applyToon" />
+            android:orientation="horizontal"
+            android:layout_gravity="center"
 
+            >
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sepia"
+                android:onClick="applySepia" />
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sketch"
+                android:onClick="applySketch" />
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Toon"
+                android:onClick="applyToon" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
 
+            >
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Contrast"
+                android:onClick="applyContrast" />
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pixel"
+                android:onClick="applyPixel" />
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Swirl"
+                android:onClick="applySwirl" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+
+            >
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Invert"
+                android:onClick="applyInvert" />
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bright"
+                android:onClick="applyBright" />
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Vignette"
+                android:onClick="applyVignette" />
+        </LinearLayout>
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Save Photo" />
     </LinearLayout>
 </ScrollView>
