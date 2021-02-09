@@ -18,6 +18,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -43,6 +44,8 @@ import jp.wasabeef.glide.transformations.gpu.SketchFilterTransformation;
 import jp.wasabeef.glide.transformations.gpu.SwirlFilterTransformation;
 import jp.wasabeef.glide.transformations.gpu.ToonFilterTransformation;
 import jp.wasabeef.glide.transformations.gpu.VignetteFilterTransformation;
+
+import static android.provider.MediaStore.*;
 
 public class MainActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
     private ImageView imageView;
@@ -73,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
                 .bitmapTransform(filter))
                 .into(imageView);
         imageView.setDrawingCacheEnabled(true);
-        filteredImage = imageView.getDrawingCache();
     }
 
     public void applySepia(View v) {
@@ -110,6 +112,19 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
 
     public void applyVignette(View v) {
         apply(new VignetteFilterTransformation());
+    }
+
+
+    public void savePhoto(View v) {
+        BitmapDrawable modified = (BitmapDrawable) imageView.getDrawable();
+        if (modified != null) {
+            Bitmap modMap = modified.getBitmap();
+            MediaStore.Images.Media.insertImage( getContentResolver(), modMap, "image", "modified image");
+
+            imageView.invalidate();
+        }
+
+
     }
 
 
