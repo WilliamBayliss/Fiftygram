@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
             Bitmap modMap = modified.getBitmap();
             MediaStore.Images.Media.insertImage( getContentResolver(), modMap, "image", "modified image");
 
-            imageView.invalidate();
+            imageView.setImageDrawable(null);
         }
 
 
